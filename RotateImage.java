@@ -48,14 +48,10 @@ rotate the input matrix in-place such that it becomes:
 import java.util.*;
 
 class RotateImage{
-	static void reverse(int [] array){
-		for(int i=0; i<array.length; i++){
-			for(int j=i+1; j<array.length; j++){
-				int temp = array[i];
-				array[i] = array[j];
-				array[j] = temp;
-			}
-		}
+	static void swap(int i, int j, int [] array){
+		int temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
 	}
 	public static void main(String[] args) {
 		Scanner inp = new Scanner(System.in);
@@ -76,8 +72,8 @@ class RotateImage{
 			}
 		}
 		//reverse of matrix (1D)
-		for(int i=0; i<n; i++){			
-			reverse(array[i]);
+		for(int i=0; i<n/2; i++){			
+			swap(i, array.length-1-i, array[i]);
 		}
 		for(int i=0; i<n; i++){
 			for(int j=0; j<n; j++){
