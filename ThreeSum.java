@@ -1,3 +1,12 @@
+/*
+	Approach:
+	1. first, using stack we will get all possible pairs and put it in list. (the pairs will start from second digit of the array)
+	2. next, we will pick up i-th element from array, and check with the pairs (from list) whether it is giving the value k, such that
+		(array[i] + list.first + list.second == k), if it is true, print all three values
+	3. repeat, step 2 until, we i reach second last position of array length, such that => (i == array.length-2)
+	
+	That's it :)
+*/
 import java.util.*;
 
 class List{
